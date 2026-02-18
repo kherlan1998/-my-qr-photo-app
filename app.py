@@ -6,7 +6,7 @@ app = Flask(__name__, template_folder=base_dir, static_folder=base_dir)
 
 @app.route('/')
 def index():
-    # This sends the user STRAIGHT to the motorcycle image upon scanning
+    # This is the change: it now shows the photo page immediately
     return render_template('photo.html', photo_id=1)
 
 @app.route('/view/<int:photo_id>')
