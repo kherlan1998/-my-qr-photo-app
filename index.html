@@ -1,29 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Photo Gallery</title>
     <style>
-        body { 
-            margin: 0; padding: 20px; font-family: sans-serif;
-            background: #1a1a1a; color: white;
-            display: flex; flex-direction: column; align-items: center; 
-        }
-        .container { max-width: 600px; width: 100%; text-align: center; }
-        img { 
-            width: 100%; border-radius: 15px; margin-top: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-        h1 { font-size: 1.5rem; margin-bottom: 10px; }
+        body { background: #1a1a1a; color: white; text-align: center; font-family: sans-serif; padding: 50px 20px; }
+        .qr-box { display: inline-block; padding: 15px; background: white; border-radius: 10px; }
+        img { width: 250px; display: block; }
+        h2 { margin-top: 20px; letter-spacing: 5px; color: #00d4ff; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Scan Successful! 📸</h1>
-        <img src="{{ url_for('static', filename='motorcycle.jpg') }}">
-        <img src="{{ url_for('static', filename='selfie.jpg') }}">
+    <h1>Welcome</h1>
+    <div class="qr-box">
+        <img src="qrcode.png" alt="QR Code">
     </div>
+    <h2>SCAN ME</h2>
 </body>
 </html>
-
