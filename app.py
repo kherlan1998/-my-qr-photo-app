@@ -3,18 +3,14 @@ import os
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
 
-app = Flask(__name__, 
-            template_folder=base_dir, 
-            static_folder=base_dir)
+app = Flask(__name__, template_folder=base_dir, static_folder=base_dir)
 
 @app.route('/')
 def index():
-    # This is the "Welcome" page that shows the QR code image
     return render_template('index.html')
 
 @app.route('/view/<int:photo_id>')
 def view_photo(photo_id):
-    # This is the "Gallery" page that shows the photos and the "Next" button
     return render_template('photo.html', photo_id=photo_id)
 
 @app.route('/<path:filename>')
