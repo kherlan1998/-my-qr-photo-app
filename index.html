@@ -3,17 +3,45 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { background: #1a1a1a; color: white; text-align: center; font-family: sans-serif; padding: 50px 20px; }
-        .qr-box { display: inline-block; padding: 15px; background: white; border-radius: 10px; }
-        img { width: 250px; display: block; }
-        h2 { margin-top: 20px; letter-spacing: 5px; color: #00d4ff; }
+        body { background: #121212; color: white; text-align: center; font-family: sans-serif; padding: 20px; }
+        .page { display: none; }
+        .active { display: block; }
+        img { width: 100%; max-width: 450px; border-radius: 15px; margin-top: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .btn { 
+            display: inline-block; margin-top: 25px; padding: 15px 40px; 
+            background: #00d4ff; color: #000; text-decoration: none; 
+            border-radius: 30px; font-weight: bold; cursor: pointer; border: none;
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome</h1>
-    <div class="qr-box">
-        <img src="qrcode.png" alt="QR Code">
+
+    <div id="welcome" class="page active">
+        <h1>Welcome</h1>
+        <img src="qrcode.png" style="width: 200px; background: white; padding: 10px;">
+        <br>
+        <button class="btn" onclick="showPage('photo1')">CLICK TO SEE IMAGES</button>
     </div>
-    <h2>SCAN ME</h2>
+
+    <div id="photo1" class="page">
+        <h1>Scan Successful! 📸</h1>
+        <img src="motorcycle.jpg">
+        <br>
+        <button class="btn" onclick="showPage('photo2')">Next Photo ⮕</button>
+    </div>
+
+    <div id="photo2" class="page">
+        <h1>Gallery 📸</h1>
+        <img src="selfie.jpg">
+        <br>
+        <button class="btn" onclick="showPage('photo1')">⬅ Back to First</button>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
