@@ -9,12 +9,12 @@ app = Flask(__name__,
 
 @app.route('/')
 def index():
-    # Shows the QR code on the main website link
+    # This is the "Welcome" page that shows the QR code image
     return render_template('index.html')
 
 @app.route('/view/<int:photo_id>')
 def view_photo(photo_id):
-    # Shows the photos when scanned (via /view/1)
+    # This is the "Gallery" page that shows the photos and the "Next" button
     return render_template('photo.html', photo_id=photo_id)
 
 @app.route('/<path:filename>')
