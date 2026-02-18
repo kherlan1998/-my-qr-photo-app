@@ -6,12 +6,11 @@ app = Flask(__name__, template_folder=base_dir, static_folder=base_dir)
 
 @app.route('/')
 def index():
-    # This shows the Welcome page with the QR code
-    return render_template('index.html')
+    # This sends the user STRAIGHT to the motorcycle image upon scanning
+    return render_template('photo.html', photo_id=1)
 
 @app.route('/view/<int:photo_id>')
 def view_photo(photo_id):
-    # This shows the motorcycle/selfie page
     return render_template('photo.html', photo_id=photo_id)
 
 @app.route('/<path:filename>')
