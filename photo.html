@@ -8,7 +8,7 @@
         .btn { 
             display: inline-block; margin-top: 25px; padding: 15px 40px; 
             background: #00d4ff; color: #000; text-decoration: none; 
-            border-radius: 30px; font-weight: bold; font-size: 1.1rem;
+            border-radius: 30px; font-weight: bold; font-size: 1.1rem; cursor: pointer; border: none;
         }
     </style>
 </head>
@@ -22,10 +22,16 @@
 
     <script>
         function showSelfie() {
-            document.getElementById('main-img').src = "selfie.jpg";
-            let btn = document.getElementById('next-btn');
-            btn.innerHTML = "⬅ Back to First";
-            btn.onclick = function() { location.reload(); };
+            var img = document.getElementById('main-img');
+            var btn = document.getElementById('next-btn');
+            
+            if (img.src.includes("motorcycle.jpg")) {
+                img.src = "selfie.jpg";
+                btn.innerHTML = "⬅ Back to First";
+            } else {
+                img.src = "motorcycle.jpg";
+                btn.innerHTML = "Next Photo ⮕";
+            }
         }
     </script>
 </body>
