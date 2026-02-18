@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Photo Gallery</title>
+    <style>
+        body { 
+            margin: 0; padding: 20px; font-family: sans-serif;
+            background: #1a1a1a; color: white;
+            display: flex; flex-direction: column; align-items: center; 
+        }
+        .container { max-width: 600px; width: 100%; text-align: center; }
+        img { 
+            width: 100%; border-radius: 15px; margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        h1 { font-size: 1.5rem; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Scan Successful! 📸</h1>
+        <img src="{{ url_for('static', filename='motorcycle.jpg') }}">
+        <img src="{{ url_for('static', filename='selfie.jpg') }}">
+    </div>
+</body>
+</html>
+
