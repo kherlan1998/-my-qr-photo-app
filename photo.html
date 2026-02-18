@@ -14,14 +14,19 @@
 </head>
 <body>
     <h1>Scan Successful! 📸</h1>
-    {% if photo_id == 1 %}
-        <img src="motorcycle.jpg">
+    <div id="gallery">
+        <img id="main-img" src="motorcycle.jpg">
         <br>
-        <a href="/view/2" class="btn">Next Photo ⮕</a>
-    {% else %}
-        <img src="selfie.jpg">
-        <br>
-        <a href="/view/1" class="btn">⬅ Back to First</a>
-    {% endif %}
+        <button id="next-btn" class="btn" onclick="showSelfie()">Next Photo ⮕</button>
+    </div>
+
+    <script>
+        function showSelfie() {
+            document.getElementById('main-img').src = "selfie.jpg";
+            let btn = document.getElementById('next-btn');
+            btn.innerHTML = "⬅ Back to First";
+            btn.onclick = function() { location.reload(); };
+        }
+    </script>
 </body>
 </html>
