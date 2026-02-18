@@ -3,26 +3,20 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { background: #121212; color: white; text-align: center; font-family: sans-serif; padding: 20px; }
-        img { width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); margin-top: 15px; }
-        .btn { 
-            display: inline-block; margin-top: 25px; padding: 15px 40px; 
-            background: #00d4ff; color: #000; text-decoration: none; 
-            border-radius: 30px; font-weight: bold; font-size: 1.1rem;
+        body { background: #0a0a0a; color: white; text-align: center; font-family: sans-serif; padding: 50px 20px; }
+        .qr-container { 
+            background: white; padding: 20px; display: inline-block; 
+            border-radius: 15px; margin-top: 20px; 
         }
+        img { width: 250px; display: block; }
+        h2 { margin-top: 30px; color: #00d4ff; letter-spacing: 3px; }
     </style>
 </head>
 <body>
-    <h1>Scan Successful! 📸</h1>
-
-    {% if photo_id == 1 %}
-        <img src="/motorcycle.jpg">
-        <br>
-        <a href="/view/2" class="btn">Next Photo ⮕</a>
-    {% else %}
-        <img src="/selfie.jpg">
-        <br>
-        <a href="/view/1" class="btn">⬅ Back to First</a>
-    {% endif %}
+    <h1>Welcome</h1>
+    <div class="qr-container">
+        <img src="qrcode.png" alt="QR Code">
+    </div>
+    <h2>SCAN ME</h2>
 </body>
 </html>
