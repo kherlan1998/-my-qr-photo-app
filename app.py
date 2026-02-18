@@ -1,7 +1,7 @@
 from flask import Flask, render_template, send_from_directory
 import os
 
-# This tells Flask exactly where your files are on Render's server
+# Get the exact folder where these files live
 base_dir = os.path.abspath(os.path.dirname(__file__))
 
 app = Flask(__name__, 
@@ -10,12 +10,10 @@ app = Flask(__name__,
 
 @app.route('/')
 def index():
-    # This looks for index.html in your main GitHub folder
     return render_template('index.html')
 
 @app.route('/view/<int:photo_id>')
 def view_photo(photo_id):
-    # This looks for photo.html in your main GitHub folder
     return render_template('photo.html', photo_id=photo_id)
 
 @app.route('/<path:filename>')
